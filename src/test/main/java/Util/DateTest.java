@@ -36,7 +36,7 @@ public class DateTest
     }
 
     @Test
-    public void differenceAsText() throws Exception
+    public void testDifferenceAsText() throws Exception
     {
         // Year
         assertEquals(Date.differenceAsText( YEAR.toString(), (YEAR * 2)+"" ), "1 year");
@@ -64,7 +64,7 @@ public class DateTest
     }
 
     @Test
-    public void isLeapYear() throws Exception
+    public void testIsLeapYear() throws Exception
     {
         assertTrue(Date.isLeapYear( 2004 ));
 
@@ -72,7 +72,7 @@ public class DateTest
     }
 
     @Test
-    public void getDaysInMonth() throws Exception
+    public void testGetDaysInMonth() throws Exception
     {
         assertTrue(Date.getDaysInMonth( 1, null ) == 31);
 
@@ -82,7 +82,7 @@ public class DateTest
     }
 
     @Test
-    public void diff() throws Exception
+    public void testDiff() throws Exception
     {
         Calendar cal = Calendar.getInstance();
         java.util.Date currentDate = cal.getTime();
@@ -94,7 +94,7 @@ public class DateTest
     }
 
     @Test
-    public void subtractDays() throws Exception
+    public void testSubtractDays() throws Exception
     {
         assertTrue(Date.subtractDays( 8, "2015-01-30").equals("2015-01-22") );
 
@@ -102,43 +102,43 @@ public class DateTest
     }
 
     @Test
-    public void getCurrentMonthStartDate() throws Exception
+    public void testGetCurrentMonthStartDate() throws Exception
     {
 
     }
 
     @Test
-    public void getCurrentMonthEndDate() throws Exception
+    public void testGetCurrentMonthEndDate() throws Exception
     {
 
     }
 
     @Test
-    public void isSqlDateTime() throws Exception
+    public void testIsSqlDateTime() throws Exception
     {
 
     }
 
     @Test
-    public void getMySqlDateTime() throws Exception
+    public void testGetMySqlDateTime() throws Exception
     {
 
     }
 
     @Test
-    public void getMySqlDate() throws Exception
+    public void testGetMySqlDate() throws Exception
     {
 
     }
 
     @Test
-    public void dateToJulian() throws Exception
+    public void testDateToJulian() throws Exception
     {
 
     }
 
     @Test
-    public void julianToDate() throws Exception
+    public void testJulianToDate() throws Exception
     {
 
     }
