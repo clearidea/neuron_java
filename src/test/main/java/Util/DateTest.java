@@ -96,9 +96,9 @@ public class DateTest
     @Test
     public void subtractDays() throws Exception
     {
-        assertTrue(Date.subtractDays( 8, "2015-01-30") == "2015-01-22");
+        assertTrue(Date.subtractDays( 8, "2015-01-30").equals("2015-01-22") );
 
-        assertFalse(Date.subtractDays( 8, "2015-01-30") == "2015-01-21");
+        assertFalse(Date.subtractDays( 8, "2015-01-30").equals("2015-01-21") );
     }
 
     @Test
