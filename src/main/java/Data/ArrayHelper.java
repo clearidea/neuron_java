@@ -100,59 +100,13 @@ public class ArrayHelper
         return false;
     }
 
-    public static boolean contains( Object[] aData, Object Value )
-    {
-        for ( Object Item : aData )
-        {
-            if ( Item.equals(Value) || Item == Value )
-                return true;
-        }
-
-        return false;
-    }
-
-    public static boolean contains( Object[][] aData, Object Value, Object Key )
-    {
-        for ( Object[] Item : aData )
-        {
-            if ( Item[0].equals(Key) || Item[0] == Key )
-            {
-                if ( Item[1].equals(Value) || Item[1] == Key )
-                    return true;
-            }
-        }
-
-        return false;
-    }
-
-
-    /**
-     * @param aData Array of Collections
-     * @param Key The Key
-     * @param Default
-     * @return mixed
-     */
-    public static Object getElement( Object[][] aData, Object Key, Object Default )
-    {
-        for ( Object[] Item : aData )
-        {
-            if ( Item[0].equals(Key) || Item[0] == Key )
-               return Item[1];
-        }
-
-        if ( Default != null )
-            return Default;
-
-        return null;
-    }
-
 
     /**
      * @param aData Array
      * @param Item Object to be compared
      * @return mixed
      */
-    public static Integer indexOf( boolean[] aData, boolean Item )
+    public static int indexOf( boolean[] aData, boolean Item )
     {
         Integer count = 0;
         for ( boolean obj : aData )
@@ -163,10 +117,10 @@ public class ArrayHelper
             count++;
         }
 
-        return null;
+        return -1;
     }
 
-    public static Integer indexOf( byte[] aData, byte Item )
+    public static int indexOf( byte[] aData, byte Item )
     {
         Integer count = 0;
         for ( byte obj : aData )
@@ -177,10 +131,10 @@ public class ArrayHelper
             count++;
         }
 
-        return null;
+        return -1;
     }
 
-    public static Integer indexOf( char[] aData, char Item )
+    public static int indexOf( char[] aData, char Item )
     {
         Integer count = 0;
         for ( char obj : aData )
@@ -191,10 +145,10 @@ public class ArrayHelper
             count++;
         }
 
-        return null;
+        return -1;
     }
 
-    public static Integer indexOf( short[] aData, short Item )
+    public static int indexOf( short[] aData, short Item )
     {
         Integer count = 0;
         for ( short obj : aData )
@@ -205,10 +159,10 @@ public class ArrayHelper
             count++;
         }
 
-        return null;
+        return -1;
     }
 
-    public static Integer indexOf( int[] aData, int Item )
+    public static int indexOf( int[] aData, int Item )
     {
         Integer count = 0;
         for ( int obj : aData )
@@ -219,10 +173,10 @@ public class ArrayHelper
             count++;
         }
 
-        return null;
+        return -1;
     }
 
-    public static Integer indexOf( long[] aData, long Item )
+    public static int indexOf( long[] aData, long Item )
     {
         Integer count = 0;
         for ( long obj : aData )
@@ -233,10 +187,10 @@ public class ArrayHelper
             count++;
         }
 
-        return null;
+        return -1;
     }
 
-    public static Integer indexOf( float[] aData, float Item )
+    public static int indexOf( float[] aData, float Item )
     {
         Integer count = 0;
         for ( float obj : aData )
@@ -247,10 +201,10 @@ public class ArrayHelper
             count++;
         }
 
-        return null;
+        return -1;
     }
 
-    public static Integer indexOf( double[] aData, double Item )
+    public static int indexOf( double[] aData, double Item )
     {
         Integer count = 0;
         for ( double obj : aData )
@@ -261,55 +215,155 @@ public class ArrayHelper
             count++;
         }
 
-        return null;
-    }
-
-    public static Object indexOf( Object[] aData, Object Item )
-    {
-        Integer count = 0;
-        for ( Object obj : aData )
-        {
-            if ( obj.equals(Item) || obj == Item )
-                return count;
-
-            count++;
-        }
-
-        return null;
-    }
-
-    public static Object indexOf( Object[][] aData, Object Item )
-    {
-        Integer count = 0;
-        for ( Object[] obj : aData )
-        {
-            if ( (obj[0].equals(Item) || obj[0] == Item) || (obj[1].equals(Item) || obj[1] == Item) )
-                return count;
-
-            count++;
-        }
-
-        return false;
+        return -1;
     }
 
     /**
-     * @param aData Object Array
-     * @param Item Object to be removed
+     * Dynamically increase the size of the array
+     *
+     * @param aData Array to be sized
+     * @param newSize Size of the new array
+     * @return Array increased in size
+     */
+    public static boolean[] increaseArraySize( boolean[] aData, int newSize )
+    {
+        if (newSize < aData.length)
+            return null;
+
+        boolean[] aTemp = new boolean[newSize];
+
+        for ( int i=0; i<aData.length; i++ )
+        {
+            aTemp[i] = aData[i];
+        }
+
+        return aTemp;
+    }
+
+    public static byte[] increaseArraySize( byte[] aData, int newSize )
+    {
+        if (newSize < aData.length)
+            return null;
+
+        byte[] aTemp = new byte[newSize];
+
+        for ( int i=0; i<aData.length; i++ )
+        {
+            aTemp[i] = aData[i];
+        }
+
+        return aTemp;
+    }
+
+    public static char[] increaseArraySize( char[] aData, int newSize )
+    {
+        if (newSize < aData.length)
+            return null;
+
+        char[] aTemp = new char[newSize];
+
+        for ( int i=0; i<aData.length; i++ )
+        {
+            aTemp[i] = aData[i];
+        }
+
+        return aTemp;
+    }
+
+    public static short[] increaseArraySize( short[] aData, int newSize )
+    {
+        if (newSize < aData.length)
+            return null;
+
+        short[] aTemp = new short[newSize];
+
+        for ( int i=0; i<aData.length; i++ )
+        {
+            aTemp[i] = aData[i];
+        }
+
+        return aTemp;
+    }
+
+    public static int[] increaseArraySize( int[] aData, int newSize )
+    {
+        if (newSize < aData.length)
+            return null;
+
+        int[] aTemp = new int[newSize];
+
+        for ( int i=0; i<aData.length; i++ )
+        {
+            aTemp[i] = aData[i];
+        }
+
+        return aTemp;
+    }
+
+    public static long[] increaseArraySize( long[] aData, int newSize )
+    {
+        if (newSize < aData.length)
+            return null;
+
+        long[] aTemp = new long[newSize];
+
+        for ( int i=0; i<aData.length; i++ )
+        {
+            aTemp[i] = aData[i];
+        }
+
+        return aTemp;
+    }
+
+    public static float[] increaseArraySize( float[] aData, int newSize )
+    {
+        if (newSize < aData.length)
+            return null;
+
+        float[] aTemp = new float[newSize];
+
+        for ( int i=0; i<aData.length; i++ )
+        {
+            aTemp[i] = aData[i];
+        }
+
+        return aTemp;
+    }
+
+    public static double[] increaseArraySize( double[] aData, int newSize )
+    {
+        if (newSize < aData.length)
+            return null;
+
+        double[] aTemp = new double[newSize];
+
+        for ( int i=0; i<aData.length; i++ )
+        {
+            aTemp[i] = aData[i];
+        }
+
+        return aTemp;
+    }
+
+
+    /**
+     * @param aData Array
+     * @param Item Item to be removed
      * @return boolean
      */
     public static boolean[] remove( boolean[] aData, boolean Item )
     {
-        Object Index = indexOf( aData, Item );
+        int Index = indexOf( aData, Item );
 
-        if (Index == null)
+        if (Index == -1)
             return null;
 
         boolean[] aTemp = new boolean[aData.length - 1];
         for (int i=0; i<aData.length; i++)
         {
-            if ( i < (int)Index )
+            if ( i < Index )
                 aTemp[i] = aData[i];
-            else if ( i > (int)Index )
+            else if ( i > Index )
                 aTemp[i-1] = aData[i];
         }
 
@@ -318,17 +372,17 @@ public class ArrayHelper
 
     public static byte[] remove( byte[] aData, byte Item )
     {
-        Object Index = indexOf( aData, Item );
+        int Index = indexOf( aData, Item );
 
-        if (Index == null)
+        if (Index == -1)
             return null;
 
         byte[] aTemp = new byte[aData.length - 1];
         for (int i=0; i<aData.length; i++)
         {
-            if ( i < (int)Index )
+            if ( i < Index )
                 aTemp[i] = aData[i];
-            else if ( i > (int)Index )
+            else if ( i > Index )
                 aTemp[i-1] = aData[i];
         }
 
@@ -337,17 +391,17 @@ public class ArrayHelper
 
     public static char[] remove( char[] aData, char Item )
     {
-        Object Index = indexOf( aData, Item );
+        int Index = indexOf( aData, Item );
 
-        if (Index == null)
+        if (Index == -1)
             return null;
 
         char[] aTemp = new char[aData.length - 1];
         for (int i=0; i<aData.length; i++)
         {
-            if ( i < (int)Index )
+            if ( i < Index )
                 aTemp[i] = aData[i];
-            else if ( i > (int)Index )
+            else if ( i > Index )
                 aTemp[i-1] = aData[i];
         }
 
@@ -356,17 +410,17 @@ public class ArrayHelper
 
     public static short[] remove( short[] aData, short Item )
     {
-        Object Index = indexOf( aData, Item );
+        int Index = indexOf( aData, Item );
 
-        if (Index == null)
+        if (Index == -1)
             return null;
 
         short[] aTemp = new short[aData.length - 1];
         for (int i=0; i<aData.length; i++)
         {
-            if ( i < (int)Index )
+            if ( i < Index )
                 aTemp[i] = aData[i];
-            else if ( i > (int)Index )
+            else if ( i > Index )
                 aTemp[i-1] = aData[i];
         }
 
@@ -375,17 +429,17 @@ public class ArrayHelper
 
     public static int[] remove( int[] aData, int Item )
     {
-        Object Index = indexOf( aData, Item );
+        int Index = indexOf( aData, Item );
 
-        if (Index == null)
+        if (Index == -1)
             return null;
 
         int[] aTemp = new int[aData.length - 1];
         for (int i=0; i<aData.length; i++)
         {
-            if ( i < (int)Index )
+            if ( i < Index )
                 aTemp[i] = aData[i];
-            else if ( i > (int)Index )
+            else if ( i > Index )
                 aTemp[i-1] = aData[i];
         }
 
@@ -394,17 +448,17 @@ public class ArrayHelper
 
     public static long[] remove( long[] aData, long Item )
     {
-        Object Index = indexOf( aData, Item );
+        int Index = indexOf( aData, Item );
 
-        if (Index == null)
+        if (Index == -1)
             return null;
 
         long[] aTemp = new long[aData.length - 1];
         for (int i=0; i<aData.length; i++)
         {
-            if ( i < (int)Index )
+            if ( i < Index )
                 aTemp[i] = aData[i];
-            else if ( i > (int)Index )
+            else if ( i > Index )
                 aTemp[i-1] = aData[i];
         }
 
@@ -413,17 +467,17 @@ public class ArrayHelper
 
     public static float[] remove( float[] aData, float Item )
     {
-        Object Index = indexOf( aData, Item );
+        int Index = indexOf( aData, Item );
 
-        if (Index == null)
+        if (Index == -1)
             return null;
 
         float[] aTemp = new float[aData.length - 1];
         for (int i=0; i<aData.length; i++)
         {
-            if ( i < (int)Index )
+            if ( i < Index )
                 aTemp[i] = aData[i];
-            else if ( i > (int)Index )
+            else if ( i > Index )
                 aTemp[i-1] = aData[i];
         }
 
@@ -432,160 +486,20 @@ public class ArrayHelper
 
     public static double[] remove( double[] aData, double Item )
     {
-        Object Index = indexOf( aData, Item );
+        int Index = indexOf( aData, Item );
 
-        if (Index == null)
+        if (Index == -1)
             return null;
 
         double[] aTemp = new double[aData.length - 1];
         for (int i=0; i<aData.length; i++)
         {
-            if ( i < (int)Index )
+            if ( i < Index )
                 aTemp[i] = aData[i];
-            else if ( i > (int)Index )
+            else if ( i > Index )
                 aTemp[i-1] = aData[i];
         }
 
         return aTemp;
-    }
-
-    public static String[] remove( String[] aData, String Item )
-    {
-        Object Index = indexOf( aData, Item );
-
-        if (Index == null)
-            return null;
-
-        String[] aTemp = new String[aData.length - 1];
-        for (int i=0; i<aData.length; i++)
-        {
-            if ( i < (int)Index )
-                aTemp[i] = aData[i];
-            else if ( i > (int)Index )
-                aTemp[i-1] = aData[i];
-        }
-
-        return aTemp;
-    }
-    /*
-    public static Integer[] remove( Integer[] aData, Integer Item )
-    {
-        Object Index = indexOf( aData, Item );
-
-        if (Index == null)
-            return null;
-
-        Integer[] aTemp = new Integer[aData.length - 1];
-        for (int i=0; i<aData.length; i++)
-        {
-            if ( i < (int)Index )
-                aTemp[i] = aData[i];
-            else if ( i > (int)Index )
-                aTemp[i-1] = aData[i];
-        }
-
-        return aTemp;
-    }
-    */
-
-    public static Float[] remove( Float[] aData, Float Item )
-    {
-        Object Index = indexOf( aData, Item );
-
-        if (Index == null)
-            return null;
-
-        Float[] aTemp = new Float[aData.length - 1];
-        for (int i=0; i<aData.length; i++)
-        {
-            if ( i < (int)Index )
-                aTemp[i] = aData[i];
-            else if ( i > (int)Index )
-                aTemp[i-1] = aData[i];
-        }
-
-        return aTemp;
-    }
-
-    public static Double[] remove( Double[] aData, Double Item )
-    {
-        Object Index = indexOf( aData, Item );
-
-        if (Index == null)
-            return null;
-
-        Double[] aTemp = new Double[aData.length - 1];
-        for (int i=0; i<aData.length; i++)
-        {
-            if ( i < (int)Index )
-                aTemp[i] = aData[i];
-            else if ( i > (int)Index )
-                aTemp[i-1] = aData[i];
-        }
-
-        return aTemp;
-    }
-
-    public static Long[] remove( Long[] aData, Long Item )
-    {
-        Object Index = indexOf( aData, Item );
-
-        if (Index == null)
-            return null;
-
-        Long[] aTemp = new Long[aData.length - 1];
-        for (int i=0; i<aData.length; i++)
-        {
-            if ( i < (int)Index )
-                aTemp[i] = aData[i];
-            else if ( i > (int)Index )
-                aTemp[i-1] = aData[i];
-        }
-
-        return aTemp;
-    }
-
-    public static Object remove( Object[] aData, Object Item, Class<?> cls )
-    {
-        Object Index = indexOf( aData, Item );
-
-        if (Index == null)
-            return null;
-
-        Object[] aTemp = new Object[aData.length - 1];
-        for (int i=0; i<aData.length; i++)
-        {
-            if ( i < (int)Index )
-                aTemp[i] = aData[i];
-            else if ( i > (int)Index )
-                aTemp[i-1] = aData[i];
-        }
-
-        return cls.cast(aTemp);
-    }
-
-    /**
-     * @param aData Generic array of Collections
-     * @param Item Object to be removed
-     * @return boolean
-     */
-    public static Object remove( Object[][] aData, Object Item )
-    {
-        Object Index = indexOf( aData, Item );
-
-        if (Index == null)
-            return false;
-
-        Object[][] newArray = new Object[aData.length - 1][2];
-        for (int i=0; i<newArray.length; i++)
-        {
-            if (i != (int)Index)
-            {
-                newArray[i][0] = aData[i][0];
-                newArray[i][1] = aData[i][1];
-            }
-        }
-
-        return newArray;
     }
 }
