@@ -55,13 +55,13 @@ public class LogMuxTest
         System.setOut(ps);
         /////////////////////////////////////////////////////////
 
-        // INFO TEST
+        // INFO Test
         this._Mux.info( test );
         String s = baos.toString();
         assertTrue( s.contains(test) );
         baos.reset();
 
-        // WARNING TEST
+        // WARNING Test
         this._Mux.warning( test );
         s = baos.toString();
         assertTrue( s.contains( "\"text\":\""+test+"\"" ));
@@ -86,6 +86,7 @@ public class LogMuxTest
         System.setOut(ps);
         /////////////////////////////////////////////////////////
 
+        // DEBUG Test
         this._Mux.debug( test );
         String s = baos.toString();
         assertTrue( s.equals("") );
