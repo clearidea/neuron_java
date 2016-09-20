@@ -15,12 +15,12 @@ public class NotCriteria implements ICriteria
     }
 
     @Override
-    public List<?> meetCriteria( List<?> entities )
+    public List< KeyValue > meetCriteria( List< KeyValue > entities )
     {
-        List<?> aNotCriteriaItems = this._Criteria.meetCriteria( entities );
-        List<?> aNotEntities = entities;
+        List< KeyValue > aNotCriteriaItems = this._Criteria.meetCriteria( entities );
+        List< KeyValue > aNotEntities = entities;
 
-        for ( Object Item : aNotCriteriaItems )
+        for ( KeyValue Item : aNotCriteriaItems )
         {
             aNotEntities.remove( Item );
         }

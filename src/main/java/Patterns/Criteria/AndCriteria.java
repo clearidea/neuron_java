@@ -13,9 +13,9 @@ public class AndCriteria extends LogicBase implements ICriteria
     }
 
     @Override
-    public List<?> meetCriteria( List<?> entities )
+    public List< KeyValue > meetCriteria( List< KeyValue > entities )
     {
-        List<?> result = this._Criteria.meetCriteria( entities );
+        List< KeyValue > result = this._Criteria.meetCriteria( entities );
 
         if ( result.isEmpty() )
             return result;

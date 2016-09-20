@@ -13,18 +13,16 @@ public class OrCriteria extends LogicBase implements ICriteria
     }
 
     @Override
-    public List<?> meetCriteria( List<?> entities )
+    public List< KeyValue > meetCriteria( List< KeyValue > entities )
     {
-        Class<?> cls = entities.get(0).getClass();
+        List< KeyValue > aFirstCriteriaItems = this._Criteria.meetCriteria( entities );
+        List< KeyValue > aOtherCriteriaItems = this._OtherCriteria.meetCriteria( entities );
 
-        List<?> aFirstCriteriaItems = this._Criteria.meetCriteria( entities );
-        List<?> aOtherCriteriaItems = this._OtherCriteria.meetCriteria( entities );
-
-        for ( Object Item : aOtherCriteriaItems )
+        for ( KeyValue Item : aOtherCriteriaItems )
         {
             if ( !aFirstCriteriaItems.contains( Item ) )
             {
-                //aFirstCriteriaItems.add( Item );
+                aFirstCriteriaItems.add( Item );
             }
         }
 

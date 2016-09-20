@@ -7,5 +7,5 @@ import java.util.List;
  */
 public interface ICriteria
 {
-    List<?> meetCriteria( List<?> entities );
+    List< KeyValue > meetCriteria( List< KeyValue > entities );
 }

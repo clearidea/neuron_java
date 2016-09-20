@@ -25,7 +25,7 @@ public class Base implements ICriteria
     }
 
     @Override
-    public List<?> meetCriteria( List<?> OtherCriteria )
+    public List< KeyValue > meetCriteria( List< KeyValue > OtherCriteria )
     {
         return OtherCriteria;
     }
