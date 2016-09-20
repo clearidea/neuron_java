@@ -12,7 +12,13 @@ public class LogMux implements ILogger
 
     public void addLog( ILogger Log )
     {
-        this._aLogs.add(Log);
+        this._aLogs.add( Log );
+    }
+
+    public void addLog( ILogger Log, int iLevel )
+    {
+        this._aLogs.add( Log );
+        setRunLevel( iLevel );
     }
 
     public void reset()

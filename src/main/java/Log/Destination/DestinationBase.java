@@ -37,7 +37,8 @@ public abstract class DestinationBase
         }
     }
 
-    public DestinationBase(IFormat Format )
+    public DestinationBase() {}
+    public DestinationBase( IFormat Format )
     {
         this.setFormat( Format );
     }
@@ -48,7 +49,7 @@ public abstract class DestinationBase
     }
 
     public abstract void write( String text, Data data );
-    public abstract void open( String[] params );
+    public abstract boolean open( String[] params );
 
     public void log( String text, int iLevel )
     {
