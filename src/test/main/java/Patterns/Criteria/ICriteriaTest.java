@@ -2,7 +2,6 @@ package main.java.Patterns.Criteria;
 
 import org.junit.Test;
 
-import java.security.Key;
 import java.util.ArrayList;
 import java.util.List;
 
